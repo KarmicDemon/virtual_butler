@@ -10,31 +10,31 @@ namespace Virtual_Butler
 {
     public class ButlerGrammar
     {
-        private Grammar wolfram = new Grammar(new GrammarBuilder("wolfram"));
+        private static Grammar wolfram = new Grammar(new GrammarBuilder("wolfram"));
 
-        private Grammar open = new Grammar(new GrammarBuilder("open"));
+        private static Grammar open = new Grammar(new GrammarBuilder("open"));
         //GrammarBuilder _run = new GrammarBuilder("run");
 
-        private Grammar google = new Grammar(new GrammarBuilder("google"));
+        private static Grammar google = new Grammar(new GrammarBuilder("google"));
         //GrammarBuilder _search = new GrammarBuilder("search");
 
-        private Grammar delete = new Grammar(new GrammarBuilder("delete"));
+        private static Grammar delete = new Grammar(new GrammarBuilder("delete"));
         //GrammarBuilder _remove = new GrammarBuilder("remove");
         //GrammarBuilder _erase = new GrammarBuilder("erase");
 
-        private Grammar kill = new Grammar(new GrammarBuilder("kill"));
+        private static Grammar kill = new Grammar(new GrammarBuilder("kill"));
         //GrammarBuilder _quit = new GrammarBuilder("quit");
 
-        private Grammar wiki = new Grammar(new GrammarBuilder("wiki"));
+        private static Grammar wiki = new Grammar(new GrammarBuilder("wiki"));
 
-        private Grammar tweet = new Grammar(new GrammarBuilder("tweet"));
+        private static Grammar tweet = new Grammar(new GrammarBuilder("tweet"));
 
-        private Grammar recommend = new Grammar(new GrammarBuilder("recommend"));
+        private static Grammar recommend = new Grammar(new GrammarBuilder("recommend"));
         //GrammarBuilder _movie = new GrammarBuilder("movie");
 
         public static Grammar[] getGrammar()
         {
-            Grammar grammar[] = { wolfram, open, google, delete, kill, wiki, tweet, recommend };
+            Grammar[] grammar = new Grammar[] {wolfram, open, google, delete, kill, wiki, tweet, recommend};
             return grammar;
         }
     }

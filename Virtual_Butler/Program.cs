@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Virtual_Butler
@@ -26,18 +28,18 @@ namespace Virtual_Butler
             welcome.AppendText("How may I help you today?");
             //Understand Prompt
             PromptBuilder understand = new PromptBuilder();
-            understand.appendText("I will get right on it.");
+            understand.AppendText("I will get right on it.");
             //Confuson Prompt
             PromptBuilder confused = new PromptBuilder();
-            confused.appendText("I am very confused. May you repeat that, sir?");
+            confused.AppendText("I am very confused. May you repeat that, sir?");
             //Anything Else Prompt
             PromptBuilder more = new PromptBuilder();
-            more.appendText("Would you like anything else, sir?");
+            more.AppendText("Would you like anything else, sir?");
             //Finished Prompt
             PromptBuilder end = new PromptBuilder();
-            end.appendText("Very good, sir. Have a nice day.");
+            end.AppendText("Very good, sir. Have a nice day.");
 
-            Grammar[] grammers = Butler.getGrammar();
+            Grammar[] grammers = ButlerGrammar.getGrammar();
 
             using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new CultureInfo("en-US")))
             {
@@ -55,15 +57,15 @@ namespace Virtual_Butler
 
                 //Attach speech recognized handler
                 recognizer.SpeechRecognized +=
-                    new EventHandler<SpeechRecognizedHandler>(SpeechRecognizedHandler);
+                    new EventHandler<SpeechRecognizedEventArgs>(SpeechRecognizedHandler);
 
                 //Attach recognize completed handler
-                recognizer.SpeechRecognizer +=
+                recognizer.RecognizeCompleted +=
                     new EventHandler<RecognizeCompletedEventArgs>(RecognizeCompletedHandler);
 
 
                 //set input to audio device
-                reognizer.SetInputToDefaultAudioDevice();
+                recognizer.SetInputToDefaultAudioDevice();
 
                 completed = false;
 
@@ -103,8 +105,8 @@ namespace Virtual_Butler
 
             if (e.Result != null)
             {
-                if (e.Result.Grammer != null) grammerName = e.Result.Grammer.Name;
-                resultText = e.Result.TExt;
+                if (e.Result.Grammar != null) grammerName = e.Result.Grammar.Name;
+                resultText = e.Result.Text;
             }
 
             Console.WriteLine(" - Grammer Name = {0}; Result Text = {1}", grammerName, resultText);
@@ -120,15 +122,15 @@ namespace Virtual_Butler
 
             if (e.Result != null)
             {
-                if (e.Result.Grammer != null) grammerName = e.Result.Grammer.Name;
-                resultText = e.Result.TExt;
+                if (e.Result.Grammar != null) grammerName = e.Result.Grammar.Name;
+                resultText = e.Result.Text;
             }
 
             Console.WriteLine(" - Grammer Name = {0}; Result Text = {1}", grammerName, resultText);
         }
 
         //event in which speech is recognized
-        static void SpeechRecognizedHandler(object sender, SpeechRecognitionRejectedEventArgs e)
+        static void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)
         {
             Console.WriteLine("In Speech Recognized Handler: ");
 
@@ -137,8 +139,8 @@ namespace Virtual_Butler
 
             if (e.Result != null)
             {
-                if (e.Result.Grammer != null) grammerName = e.Result.Grammer.Name;
-                resultText = e.Result.TExt;
+                if (e.Result.Grammar != null) grammerName = e.Result.Grammar.Name;
+                resultText = e.Result.Text;
             }
 
             Console.WriteLine(" - Grammer Name = {0}; Result Text = {1}", grammerName, resultText);
@@ -149,13 +151,13 @@ namespace Virtual_Butler
         {
             Console.WriteLine("In Recognize Completed Handler: ");
 
-            if (e.error != null)
+            if (e.Error != null)
             {
                 Console.WriteLine("Error occured during recognition {0}", e.Error);
                 return;
             }
 
-            if (e.InitialSilenceTimeout || BabbleTimeout)
+            if (e.InitialSilenceTimeout || e.BabbleTimeout)
             {
                 Console.WriteLine(" - BabbleTimeout = {0}, InitialSilenceTimeout = {1}", e.BabbleTimeout, e.InitialSilenceTimeout);
                 return;

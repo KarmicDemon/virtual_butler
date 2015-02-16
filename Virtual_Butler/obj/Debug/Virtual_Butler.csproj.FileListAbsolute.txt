@@ -2,3 +2,7 @@ c:\users\derek\documents\visual studio 2013\Projects\Virtual_Butler\Virtual_Butl
 C:\Users\Derek\Documents\Visual Studio 2013\Projects\Virtual_Butler\Virtual_Butler\obj\Debug\Virtual_Butler.csprojResolveAssemblyReference.cache
 C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\bin\Debug\Virtual_Butler.exe.config
 C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.csprojResolveAssemblyReference.cache
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\bin\Debug\Virtual_Butler.exe
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\bin\Debug\Virtual_Butler.pdb
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.exe
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.pdb
