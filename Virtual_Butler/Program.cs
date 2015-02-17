@@ -41,47 +41,50 @@ namespace Virtual_Butler
 
             Grammar[] grammers = ButlerGrammar.getGrammar();
 
-            using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new CultureInfo("en-US")))
-            {
-                //Attach speech detected handler
-                recognizer.SpeechDetected +=
-                    new EventHandler<SpeechDetectedEventArgs>(SpeechDetectedHandler);
+                using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new CultureInfo("en-US")))
+                {
+                    //Load Grammar
+                    for (int i = 0; i < grammers.Length; i++) recognizer.LoadGrammar(grammers[i]);
 
-                //Attach speech recognized handler
-                recognizer.SpeechHypothesized +=
-                    new EventHandler<SpeechHypothesizedEventArgs>(SpeechHypothesizedHandler);
+                    //Attach speech detected handler
+                    recognizer.SpeechDetected +=
+                        new EventHandler<SpeechDetectedEventArgs>(SpeechDetectedHandler);
 
-                //Attach speech recognition rejected handler
-                recognizer.SpeechRecognitionRejected +=
-                    new EventHandler<SpeechRecognitionRejectedEventArgs>(SpeechRecognitionRejectedHandler);
+                    //Attach speech recognized handler
+                    recognizer.SpeechHypothesized +=
+                        new EventHandler<SpeechHypothesizedEventArgs>(SpeechHypothesizedHandler);
 
-                //Attach speech recognized handler
-                recognizer.SpeechRecognized +=
-                    new EventHandler<SpeechRecognizedEventArgs>(SpeechRecognizedHandler);
+                    //Attach speech recognition rejected handler
+                    recognizer.SpeechRecognitionRejected +=
+                        new EventHandler<SpeechRecognitionRejectedEventArgs>(SpeechRecognitionRejectedHandler);
 
-                //Attach recognize completed handler
-                recognizer.RecognizeCompleted +=
-                    new EventHandler<RecognizeCompletedEventArgs>(RecognizeCompletedHandler);
+                    //Attach speech recognized handler
+                    recognizer.SpeechRecognized +=
+                        new EventHandler<SpeechRecognizedEventArgs>(SpeechRecognizedHandler);
+
+                    //Attach recognize completed handler
+                    recognizer.RecognizeCompleted +=
+                        new EventHandler<RecognizeCompletedEventArgs>(RecognizeCompletedHandler);
 
 
-                //set input to audio device
-                recognizer.SetInputToDefaultAudioDevice();
+                    //set input to audio device
+                    recognizer.SetInputToDefaultAudioDevice();
 
-                completed = false;
+                    completed = false;
 
-                Console.WriteLine("Starting asynchronous voice recognition....");
+                    Console.WriteLine("Starting asynchronous voice recognition....");
 
-                //where all the magic happens
-                recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                    //where all the magic happens
+                    recognizer.RecognizeAsync(RecognizeMode.Multiple);
 
-                //Wait fifteen seconds before cancelling recognition
-                Thread.Sleep(TimeSpan.FromSeconds(15));
-                recognizer.RecognizeAsyncCancel();
+                    //Wait fifteen seconds before cancelling recognition
+                    Thread.Sleep(TimeSpan.FromSeconds(15));
+                    recognizer.RecognizeAsyncCancel();
 
-                //Wait for operation to complete
-                while (!completed) Thread.Sleep(250);
-                Console.WriteLine("Done. :)");
-            }
+                    //Wait for operation to complete
+                    while (!completed) Thread.Sleep(250);
+                    Console.WriteLine("Done. :)");
+                }
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");
