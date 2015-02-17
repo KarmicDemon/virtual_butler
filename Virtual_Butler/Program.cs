@@ -39,12 +39,12 @@ namespace Virtual_Butler
             PromptBuilder end = new PromptBuilder();
             end.AppendText("Very good, sir. Have a nice day.");
 
-            Grammar[] grammers = ButlerGrammar.getGrammar();
+            //Grammar[] grammers = ButlerGrammar.getGrammar();
 
                 using (SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine(new CultureInfo("en-US")))
                 {
                     //Load Grammar
-                    for (int i = 0; i < grammers.Length; i++) recognizer.LoadGrammar(grammers[i]);
+                    recognizer.LoadGrammar(new DictationGrammar());
 
                     //Attach speech detected handler
                     recognizer.SpeechDetected +=
