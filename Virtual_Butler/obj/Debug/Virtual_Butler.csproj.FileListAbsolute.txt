@@ -6,3 +6,5 @@ C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\bin\Debug\Virtu
 C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\bin\Debug\Virtual_Butler.pdb
 C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.exe
 C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.pdb
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.ButlerSettings.resources
+C:\Users\Derek\Desktop\Projects\C#\virtual_butler\Virtual_Butler\obj\Debug\Virtual_Butler.csproj.GenerateResource.Cache

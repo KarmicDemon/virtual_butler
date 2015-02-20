@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Speech.Synthesis;
@@ -15,7 +15,7 @@ namespace Virtual_Butler
         public static string welcome = "How may I assist you today, sir?";
 
 
-        public static SpeechSynthesizer Synth() 
+        public static SpeechSynthesizer Synth()
         {
             //Trying to initialize a new instance of the Speech Synthesizer
             SpeechSynthesizer synth = new SpeechSynthesizer();
@@ -31,5 +31,7 @@ namespace Virtual_Butler
             //Hello Prompt
             PromptBuilder prompt = new PromptBuilder();
             prompt.AppendText(message);
-             
+        }
+    }
 } 
+

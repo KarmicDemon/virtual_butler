@@ -40,17 +40,32 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm.cs" />
     <Compile Include="Actions.cs" />
+    <Compile Include="ButlerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ButlerSettings.Designer.cs">
+      <DependentUpon>ButlerSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Recognizer.cs" />
     <Compile Include="Voice.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Grammar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ButlerSettings.resx">
+      <DependentUpon>ButlerSettings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
