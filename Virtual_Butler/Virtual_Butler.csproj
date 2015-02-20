@@ -43,6 +43,9 @@
     <Reference Include="System.Speech" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm.cs" />
+    <Compile Include="Actions.cs" />
+    <Compile Include="Router.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Grammar.cs" />
   </ItemGroup>
