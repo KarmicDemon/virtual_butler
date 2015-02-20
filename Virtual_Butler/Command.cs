@@ -8,14 +8,15 @@ namespace Virtual_Butler
 {
     class Command
     {
-        private bool isInitialized;
+        //private bool isInitialized = false;
         private string action;
         private string command;
 
 
         public Command(string action, string command)
         {
-            isInitialized = true; this.action = action; this.command = command;
+            //this.isInitialized = true; 
+            this.action = action; this.command = command;
         }
     }
 }

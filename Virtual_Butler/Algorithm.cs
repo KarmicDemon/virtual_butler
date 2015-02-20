@@ -9,8 +9,8 @@ namespace Virtual_Butler
 {
     public class Algorithm
     {
-        const char[] string_limiters = { ' ' , ',' , '.' , '\t' , ';' , ':' , '?' };
-        const string[] actions = { Router.delete, Router.google, Router.kill, 
+        char[] string_limiters = { ' ' , ',' , '.' , '\t' , ';' , ':' , '?' };
+        string[] actions = { Router.delete, Router.google, Router.kill, 
                                      Router.recommend, Router.run, Router.tweet, Router.wiki, Router.wolfram };
 
         public string getAction(List<string> list)
@@ -26,7 +26,7 @@ namespace Virtual_Butler
 
         public string getDeterminant(string action)
         {
-
+            return "Hay";
         }
     }
 }
