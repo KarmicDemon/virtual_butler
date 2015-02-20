@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Algorithm.cs" />
     <Compile Include="Actions.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Grammar.cs" />

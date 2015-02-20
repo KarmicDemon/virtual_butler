@@ -8,14 +8,14 @@ namespace Virtual_Butler
 {
     class Router
     {
-        private const string delete = "delete";
-        private const string google = "google";
-        private const string kill = "kill";
-        private const string recommend = "recommend";
-        private const string run = "run";
-        private const string tweet = "tweet";
-        private const string wolfram = "wolfram";
-        private const string wiki = "wiki";
+        public const string delete = "delete";
+        public const string google = "google";
+        public const string kill = "kill";
+        public const string recommend = "recommend";
+        public const string run = "run";
+        public const string tweet = "tweet";
+        public const string wolfram = "wolfram";
+        public const string wiki = "wiki";
 
         public bool route(string determinant)
         {
