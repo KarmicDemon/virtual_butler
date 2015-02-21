@@ -1,6 +1,6 @@
 {
     "_____comment": "create icon and make it go under window",
-    "main": "index.html",
+    "main": "./html/index.html",
     "name": "butler_settings",
     "description": "N/A",
     "version": "0.1.0",
