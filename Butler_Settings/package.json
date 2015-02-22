@@ -1,4 +1,5 @@
 {
     "name": "Butler Settings",
-    "main": "html/ndex.html"
+    "version": "0.0.1",
+    "main": "js/main.js"
 }
