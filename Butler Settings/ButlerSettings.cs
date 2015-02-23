@@ -17,6 +17,7 @@ namespace Butler_Settings
         {
             InitializeComponent();
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.BackColor = MetroFramework.MetroColors.Orange;
         }
 
         private void Butler_Load(object sender, EventArgs e)

@@ -30,13 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroStyleExtender1 = new MetroFramework.Components.MetroStyleExtender(this.components);
-            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.SuspendLayout();
-            // 
-            // metroContextMenu1
-            // 
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(61, 4);
             // 
             // Butler
             // 
@@ -53,7 +47,6 @@
         #endregion
 
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender1;
-        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
     }
 }
 
