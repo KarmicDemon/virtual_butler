@@ -11,14 +11,15 @@ using System.Windows.Forms;
 
 namespace Butler_Settings
 {
-    public partial class Form1 : MetroForm
+    public partial class Butler : MetroForm
     {
-        public Form1()
+        public Butler()
         {
             InitializeComponent();
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Butler_Load(object sender, EventArgs e)
         {
 
         }

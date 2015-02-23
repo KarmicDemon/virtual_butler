@@ -1,6 +1,6 @@
 ﻿namespace Butler_Settings
 {
-    partial class Form1
+    partial class Butler
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroStyleExtender1 = new MetroFramework.Components.MetroStyleExtender(this.components);
+            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.SuspendLayout();
             // 
-            // Form1
+            // metroContextMenu1
+            // 
+            this.metroContextMenu1.Name = "metroContextMenu1";
+            this.metroContextMenu1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // Butler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 495);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Butler";
+            this.Text = "Butler";
+            this.Load += new System.EventHandler(this.Butler_Load);
             this.ResumeLayout(false);
 
         }
@@ -47,6 +53,7 @@
         #endregion
 
         private MetroFramework.Components.MetroStyleExtender metroStyleExtender1;
+        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
     }
 }
 
